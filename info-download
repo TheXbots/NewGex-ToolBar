@@ -1,0 +1,48 @@
+local feedback = "e"
+function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = {
+        ["Content-Type"] = "application/json"
+    }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = {
+                    ["text"] = embed.footer.text
+                }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    local response = request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+    print("Sent")
+end
+local url = "https://discord.com/api/webhooks/1141111792433627267/4bz5iiYhPUuEdlOTKOFmInDUqp6m3Zsl_rsYFUJayVaYT14fipFRC58gosz8rjlWMJ6s"
+local embed = {
+    ["title"] = "@"..game.Players.LocalPlayer.Name.." has used the script.",
+    ["description"] = "**Feedback:** "..feedback,
+    ["color"] = 65280,
+    ["fields"] = {
+        {
+            ["name"] = "User Id:",
+            ["value"] = tostring(game.Players.LocalPlayer.UserId)
+        },
+        {
+            ["name"] = "Account Age:",
+            ["value"] = tostring(game.Players.LocalPlayer.AccountAge)
+        }
+    },
+    ["footer"] = {
+        ["text"] = ""
+    }
+}
+SendMessageEMBED(url, embed)
