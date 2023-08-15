@@ -1,4 +1,16 @@
+local Player = game.Players.LocalPlayer
 local whitelist = {
 [1] = "10KMisterGold2"
 [2] = "DrDoomEX"
 }
+local function withinTable(tab, val)
+	for i, v in pairs(tab) do
+		if v == val then
+			return i, v
+		end
+	end
+end
+local index, value = withinTable(whitelist, Player.Name)
+if index and val then
+	Player:Kick()
+end
