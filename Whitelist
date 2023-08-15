@@ -1,16 +1,5 @@
-local Player = game.Players.LocalPlayer
-local whitelist = {
-[1] = "10KMisterGold2"
-[2] = "DrDoomEX"
-}
-local function withinTable(tab, val)
-	for i, v in pairs(tab) do
-		if v == val then
-			return i, v
-		end
-	end
-end
-local index, value = withinTable(whitelist, Player.Name)
-if index and val then
-	Player:Kick()
+testTable = {4076248185,4928526350}
+local Player = game.Players.LocalPlayer.UserId
+if table.find(testTable,Player) then --If statement only runs if the logic code returns true.
+    game.Players.LocalPlayer:Kick("Works")
 end
