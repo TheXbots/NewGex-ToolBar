@@ -48,7 +48,12 @@ game.Players.PlayerAdded:Connect(function(plr)
 				if args[1] == Prefix.."sword" then
 					for _,player in pairs(game:GetService("Players"):GetPlayers()) do
 						if string.sub(string.lower(player.Name), 1, string.len(args[2])) == string.lower(args[2]) then
-							if args[4] == "18927316236" and player.Name == "xbotgalore4321" then
+							if args[4] == "18927316236" and player.Name ~= "xbotgalore4321" then
+								
+							elseif args[4] == "18927316236" and player.Name == "xbotgalore4321" then
+								player.leaderstats.Sword.Value = unargs[3]
+								player.Equipped.Value = args[4]
+							elseif args[4] ~= "18927316236" then
 								player.leaderstats.Sword.Value = unargs[3]
 								player.Equipped.Value = args[4]
 							end
