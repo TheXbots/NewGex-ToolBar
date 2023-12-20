@@ -1,4 +1,4 @@
-local Admins = {"xbotgalore4321", "masterperson451", "whoareyou77777", "fiveironfan2006", "ninjosh45", "oskizwnh", "Thehockey007"}
+local Admins = {"xbotgalore4321", "masterperson451", "whoareyou77777", "fiveironfan2006", "ninjosh45", "oskizwnh", "Thehockey007", "iuvt"}
 local Prefix = "/"
 local BadgeService = game:GetService("BadgeService")
 local DataStoreservice = game:GetService("DataStoreService")
