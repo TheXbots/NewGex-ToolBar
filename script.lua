@@ -53,7 +53,16 @@ game.Players.PlayerAdded:Connect(function(plr)
 							elseif args[4] == "18927316236" and player.Name == "xbotgalore4321" then
 								player.leaderstats.Sword.Value = unargs[3]
 								player.Equipped.Value = args[4]
-							elseif args[4] ~= "18927316236" then
+							elseif args[4] == "45" then
+								if player.Name ~= "xbotgalore4321" then
+									player.leaderstats.Sword.Value = unargs[3]
+									player.Equipped.Value = args[4]
+								end
+								if player.Name == "ninjosh45" then 
+									player.leaderstats.Sword.Value = unargs[3]
+									player.Equipped.Value = args[4]
+								end
+							else								
 								player.leaderstats.Sword.Value = unargs[3]
 								player.Equipped.Value = args[4]
 							end
